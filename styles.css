@@ -748,9 +748,10 @@ body {
         flex-direction: column;
     }
     .sidebar {
-        position: static;
+        position: static !important;
         width: 100%;
         margin-bottom: 2rem;
+        order: -1; /* Move sidebar to the top on mobile */
     }
     .main-content {
         padding-left: 0;
@@ -1160,18 +1161,20 @@ html {
 }
 
 .page-layout {
-    position: relative;
+    display: flex;
+    gap: 2rem;
 }
 
 .main-content {
-    padding-left: 280px; /* Create space for the sidebar */
+    flex: 1;
+    min-width: 0; /* Prevents content from overflowing */
 }
 
 .sidebar {
-    position: absolute;
-    left: 0px; /* Position it in the left margin */
-    width: 220px;
-    top: 0;
+    flex: 0 0 250px; /* Sidebar width */
+    position: sticky;
+    top: 120px; /* Adjust based on navbar height */
+    align-self: flex-start;
 }
 
 .sidebar-widget {
