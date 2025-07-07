@@ -45,6 +45,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow-light);
+    position: relative;
 }
 
 .navbar-container {
@@ -91,6 +92,52 @@ body {
 .navbar-item.active {
     color: var(--secondary-color);
     background: var(--background-light);
+}
+
+.navbar-burger {
+    display: none;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    background: transparent;
+    border: none;
+}
+
+.navbar-burger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 1.5rem;
+    background: var(--primary-color);
+    border-radius: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.navbar-burger span:nth-child(1) {
+    top: 0.75rem;
+}
+
+.navbar-burger span:nth-child(2) {
+    top: 1.4rem;
+}
+
+.navbar-burger span:nth-child(3) {
+    bottom: 0.75rem;
+}
+
+.navbar-burger.is-active span:nth-child(1) {
+    transform: translateX(-50%) translateY(0.65rem) rotate(45deg);
+}
+
+.navbar-burger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-burger.is-active span:nth-child(3) {
+    transform: translateX(-50%) translateY(-0.65rem) rotate(-45deg);
 }
 
 /* Header Styles */
@@ -659,6 +706,60 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .navbar-burger {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+        width: 100%;
+        background: var(--background);
+        box-shadow: var(--shadow-light);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+    }
+
+    .navbar-menu.is-active {
+        display: block;
+    }
+
+    .navbar-start {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .navbar-item {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .navbar-item:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .page-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: static;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .main-content {
+        padding-left: 0;
+    }
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .publication-title {
         font-size: 2.5rem;
@@ -686,24 +787,37 @@ body {
 }
 
 @media (max-width: 480px) {
+    .domains-grid {
+        grid-template-columns: 1fr;
+    }
     .publication-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .container {
-        padding: 0 15px;
+        padding: 0 10px;
     }
     
     .hero {
-        padding: 60px 0;
+        padding: 40px 0;
     }
     
     .section {
-        padding: 40px 0;
+        padding: 30px 0;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 }
 
@@ -1092,15 +1206,51 @@ html {
     padding-left: 5px;
 }
 
-@media (max-width: 992px) {
-    .page-layout {
-        flex-direction: column;
+@media (max-width: 768px) {
+    .navbar-burger {
+        display: block;
     }
-    .sidebar {
-        position: static;
+
+    .navbar-menu {
+        display: none;
         width: 100%;
     }
-    .content-grid {
+
+    .navbar-menu.is-active {
+        display: block;
+    }
+
+    .navbar-start {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .navbar-item {
+        padding: 0.5rem 0;
+    }
+    
+    .publication-title {
+        font-size: 2.5rem;
+    }
+    
+    .solution-taxonomy {
         grid-template-columns: 1fr;
+    }
+    
+    .contributions-grid,
+    .gap-sources,
+    .future-directions {
+        grid-template-columns: 1fr;
+    }
+    
+    .publication-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .affiliations {
+        flex-direction: column;
+        align-items: center;
     }
 }
