@@ -1,0 +1,10 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: local
+    hooks:
+      - id: prettier-format
+        name: prettier-format
+        entry: prettier_format.sh
+        language: script
+        files: \.(md|html|js|css|scss|yml|yaml)$
