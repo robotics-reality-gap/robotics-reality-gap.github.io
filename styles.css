@@ -1285,3 +1285,34 @@ html {
     align-items: center;
   }
 }
+
+.source-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.source-card-link .source-card,
+.source-card-link .approach-section {
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  height: 100%;
+}
+
+.source-card-link:hover .source-card,
+.source-card-link:hover .approach-section {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.source-card-link .intro-card {
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  height: 100%;
+}
+
+.source-card-link:hover .intro-card {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

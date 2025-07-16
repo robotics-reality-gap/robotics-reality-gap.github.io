@@ -176,27 +176,37 @@
               scalable, and efficient environment for training and testing.
             </p>
             <div class="intro-grid">
-              <div class="intro-card">
-                <div class="card-icon"><i class="fas fa-cogs"></i></div>
-                <h4>Train & Test</h4>
-                <p>
-                  Develop and validate complex behaviors without risking real
-                  hardware.
-                </p>
-              </div>
-              <div class="intro-card">
-                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                <h4>Benchmark</h4>
-                <p>Compare algorithms in reproducible, controlled scenarios.</p>
-              </div>
-              <div class="intro-card">
-                <div class="card-icon"><i class="fas fa-database"></i></div>
-                <h4>Generate Data</h4>
-                <p>
-                  Create vast datasets for learning at a fraction of the
-                  real-world cost.
-                </p>
-              </div>
+              <a href="best-practices.html" class="source-card-link">
+                <div class="intro-card">
+                  <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                  <h4>Train & Test</h4>
+                  <p>
+                    Develop and validate complex behaviors without risking real
+                    hardware.
+                  </p>
+                </div>
+              </a>
+              <a href="evaluation.html" class="source-card-link">
+                <div class="intro-card">
+                  <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                  <h4>Benchmark</h4>
+                  <p>
+                    Compare algorithms in reproducible, controlled scenarios.
+                  </p>
+                </div>
+              </a>
+              <a href="best-practices.html" class="source-card-link">
+                <div class="intro-card">
+                  <div class="card-icon"><i class="fas fa-database"></i></div>
+                  <h4>Generate Data</h4>
+                  <p>
+                    Create vast datasets for learning at a fraction of the
+                    real-world cost.
+                  </p>
+                </div>
+              </a>
             </div>
             <br />
             <p>
@@ -273,66 +283,74 @@
         <div class="paper-section">
           <h2 class="section-title">Sources of the Reality Gap</h2>
           <div class="gap-sources">
-            <div class="source-card">
-              <div class="source-icon dynamics">
-                <i class="fas fa-cogs"></i>
+            <a href="domains.html" class="source-card-link">
+              <div class="source-card">
+                <div class="source-icon dynamics">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Dynamics</h3>
+                <p>
+                  Discrepancies in physics simulation including rigid body
+                  dynamics, friction, contact forces, and material properties.
+                </p>
+                <div class="source-examples">
+                  <span class="tag">Friction Models</span>
+                  <span class="tag">Contact Forces</span>
+                  <span class="tag">Deformation</span>
+                </div>
               </div>
-              <h3>Dynamics</h3>
-              <p>
-                Discrepancies in physics simulation including rigid body
-                dynamics, friction, contact forces, and material properties.
-              </p>
-              <div class="source-examples">
-                <span class="tag">Friction Models</span>
-                <span class="tag">Contact Forces</span>
-                <span class="tag">Deformation</span>
+            </a>
+            <a href="domains.html" class="source-card-link">
+              <div class="source-card">
+                <div class="source-icon perception">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <h3>Perception & Sensing</h3>
+                <p>
+                  Differences in sensor data between simulation and reality,
+                  affecting visual, tactile, and proprioceptive feedback.
+                </p>
+                <div class="source-examples">
+                  <span class="tag">Camera Noise</span>
+                  <span class="tag">LiDAR Artifacts</span>
+                  <span class="tag">Lighting</span>
+                </div>
               </div>
-            </div>
-            <div class="source-card">
-              <div class="source-icon perception">
-                <i class="fas fa-eye"></i>
+            </a>
+            <a href="domains.html" class="source-card-link">
+              <div class="source-card">
+                <div class="source-icon actuation">
+                  <i class="fas fa-sliders-h"></i>
+                </div>
+                <h3>Actuation & Control</h3>
+                <p>
+                  Variations in motor behavior, joint dynamics, and control system
+                  responses between simulated and real hardware.
+                </p>
+                <div class="source-examples">
+                  <span class="tag">Motor Dynamics</span>
+                  <span class="tag">Backlash</span>
+                  <span class="tag">Delays</span>
+                </div>
               </div>
-              <h3>Perception & Sensing</h3>
-              <p>
-                Differences in sensor data between simulation and reality,
-                affecting visual, tactile, and proprioceptive feedback.
-              </p>
-              <div class="source-examples">
-                <span class="tag">Camera Noise</span>
-                <span class="tag">LiDAR Artifacts</span>
-                <span class="tag">Lighting</span>
+            </a>
+            <a href="domains.html" class="source-card-link">
+              <div class="source-card">
+                <div class="source-icon system">
+                  <i class="fas fa-network-wired"></i>
+                </div>
+                <h3>System Design</h3>
+                <p>
+                  System-level differences including communication delays, safety
+                  mechanisms, and software stack inconsistencies.
+                </p>
+                <div class="source-examples">
+                  <span class="tag">Latency</span>
+                  <span class="tag">Safety Limits</span>
+                  <span class="tag">Software Stack</span>
+                </div>
               </div>
-            </div>
-            <div class="source-card">
-              <div class="source-icon actuation">
-                <i class="fas fa-sliders-h"></i>
-              </div>
-              <h3>Actuation & Control</h3>
-              <p>
-                Variations in motor behavior, joint dynamics, and control system
-                responses between simulated and real hardware.
-              </p>
-              <div class="source-examples">
-                <span class="tag">Motor Dynamics</span>
-                <span class="tag">Backlash</span>
-                <span class="tag">Delays</span>
-              </div>
-            </div>
-            <div class="source-card">
-              <div class="source-icon system">
-                <i class="fas fa-network-wired"></i>
-              </div>
-              <h3>System Design</h3>
-              <p>
-                System-level differences including communication delays, safety
-                mechanisms, and software stack inconsistencies.
-              </p>
-              <div class="source-examples">
-                <span class="tag">Latency</span>
-                <span class="tag">Safety Limits</span>
-                <span class="tag">Software Stack</span>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -340,47 +358,51 @@
         <div class="paper-section">
           <h2 class="section-title">Solution Taxonomy</h2>
           <div class="solution-taxonomy">
-            <div class="approach-section">
-              <h3 class="approach-title">Reducing the Gap</h3>
-              <p class="approach-desc">
-                Making simulation more realistic through improved fidelity and
-                smart design choices
-              </p>
-              <div class="method-grid">
-                <div class="method-item">
-                  <h4>System Identification</h4>
-                  <p>Parameter estimation and calibration techniques</p>
-                </div>
-                <div class="method-item">
-                  <h4>Physics Learning</h4>
-                  <p>Learning residual dynamics and corrections</p>
-                </div>
-                <div class="method-item">
-                  <h4>Hardware Design</h4>
-                  <p>Co-design of hardware and simulation</p>
-                </div>
-              </div>
-            </div>
-            <div class="approach-section">
-              <h3 class="approach-title">Overcoming the Gap</h3>
-              <p class="approach-desc">
-                Making policies robust to reality gap through diverse training
-              </p>
-              <div class="method-grid">
-                <div class="method-item">
-                  <h4>Domain Randomization</h4>
-                  <p>Training across diverse simulated environments</p>
-                </div>
-                <div class="method-item">
-                  <h4>Data-Driven Transfer</h4>
-                  <p>Incorporating real-world data into training</p>
-                </div>
-                <div class="method-item">
-                  <h4>Adaptive Methods</h4>
-                  <p>Online adaptation and meta-learning</p>
+            <a href="best-practices.html" class="source-card-link">
+              <div class="approach-section">
+                <h3 class="approach-title">Reducing the Gap</h3>
+                <p class="approach-desc">
+                  Making simulation more realistic through improved fidelity and
+                  smart design choices
+                </p>
+                <div class="method-grid">
+                  <div class="method-item">
+                    <h4>System Identification</h4>
+                    <p>Parameter estimation and calibration techniques</p>
+                  </div>
+                  <div class="method-item">
+                    <h4>Physics Learning</h4>
+                    <p>Learning residual dynamics and corrections</p>
+                  </div>
+                  <div class="method-item">
+                    <h4>Hardware Design</h4>
+                    <p>Co-design of hardware and simulation</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
+            <a href="best-practices.html" class="source-card-link">
+              <div class="approach-section">
+                <h3 class="approach-title">Overcoming the Gap</h3>
+                <p class="approach-desc">
+                  Making policies robust to reality gap through diverse training
+                </p>
+                <div class="method-grid">
+                  <div class="method-item">
+                    <h4>Domain Randomization</h4>
+                    <p>Training across diverse simulated environments</p>
+                  </div>
+                  <div class="method-item">
+                    <h4>Data-Driven Transfer</h4>
+                    <p>Incorporating real-world data into training</p>
+                  </div>
+                  <div class="method-item">
+                    <h4>Adaptive Methods</h4>
+                    <p>Online adaptation and meta-learning</p>
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
 
