@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reality Gap in Robotics</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <strong>Robotics Reality Gap</strong>
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenu"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item" href="domains.html">Sources of Gaps</a>
+            <a class="navbar-item" href="evaluation.html">Evaluation Metrics</a>
+            <a class="navbar-item" href="best-practices.html">Best Practices</a>
+            <a class="navbar-item" href="open-problems.html">Open Problems</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Reality Gap in Robotics: Challenges, Solutions, and Best
+                Practices
+              </h1>
+              <div class="authors">
+                <div class="author-row">
+                  <span class="author-item"
+                    ><a href="https://eliealjalbout.github.io/" target="_blank"
+                      >Elie Aljalbout</a
+                    ><sup>1</sup>,</span
+                  >
+                  <span class="author-item"
+                    ><a href="https://jiaxux.ing/" target="_blank">Jiaxu Xing</a
+                    ><sup>1</sup>,</span
+                  >
+                  <span class="author-item"
+                    ><a href="https://roangel.github.io/" target="_blank"
+                      >Angel Romero</a
+                    ><sup>1</sup>,</span
+                  >
+                  <span class="author-item"
+                    ><a
+                      href="https://www.linkedin.com/in/iretiayo-akinola-a9957517"
+                      target="_blank"
+                      >Iretiayo Akinola</a
+                    ><sup>2</sup>,</span
+                  >
+                  <span class="author-item"
+                    ><a
+                      href="https://research.nvidia.com/person/caelan-garrett"
+                      target="_blank"
+                      >Caelan Garrett</a
+                    ><sup>2</sup>,</span
+                  >
+                  <span class="author-item"
+                    ><a href="https://www.eric-heiden.com/" target="_blank"
+                      >Eric Heiden</a
+                    ><sup>2</sup>,</span
+                  >
+                </div>
+                <div class="author-row">
+                  <span class="author-item"
+                    ><a href="https://abhishekunique.github.io/" target="_blank"
+                      >Abhishek Gupta</a
+                    ><sup>4</sup>,</span
+                  >
+                  <span class="author-item"
+                    ><a
+                      href="https://profiles.faculty.utah.edu/u6002596"
+                      target="_blank"
+                      >Tucker Hermans</a
+                    ><sup>2,5</sup>,</span
+                  >
+                  <span class="author-item"
+                    ><a
+                      href="https://scholar.google.com/citations?user=M3NuG7AAAAAJ&hl=en"
+                      target="_blank"
+                      >Yash Narang</a
+                    ><sup>2</sup>,</span
+                  >
+                  <span class="author-item"
+                    ><a
+                      href="https://homes.cs.washington.edu/~fox/"
+                      target="_blank"
+                      >Dieter Fox</a
+                    ><sup>4</sup>,</span
+                  >
+                  <span class="author-item"
+                    ><a href="https://fabioramos.github.io/" target="_blank"
+                      >Fabio Ramos</a
+                    ><sup>2,3</sup></span
+                  >
+                </div>
+              </div>
+              <div class="affiliations">
+                <div class="affiliation"><sup>1</sup>University of Zurich</div>
+                <div class="affiliation"><sup>2</sup>NVIDIA</div>
+                <div class="affiliation">
+                  <sup>3</sup>The University of Sydney
+                </div>
+                <div class="affiliation">
+                  <sup>4</sup>University of Washington
+                </div>
+                <div class="affiliation"><sup>5</sup>University of Utah</div>
+              </div>
+
+              <div class="publication-links">
+                <a class="btn btn-primary" href="" target="_blank">
+                  <i class="fas fa-book"></i> arXiv (Coming Soon!)
+                </a>
+                <a class="btn btn-primary" href="index.html" target="_blank">
+                  <i class="fas fa-file-pdf"></i> Paper (Coming Soon!)
+                </a>
+                <a class="btn btn-secondary" href="#bibtex">
+                  <i class="fas fa-quote-left"></i> BibTeX
+                </a>
+                <a class="btn btn-secondary" href="domains.html">
+                  <i class="fas fa-compass"></i> Explore the Gaps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Overview -->
+        <div class="paper-section">
+          <h2 class="section-title">Overview</h2>
+          <div class="intro-section">
+            <h3>The Power of Simulation in Robotics</h3>
+            <p>
+              Simulation is a cornerstone of modern robotics, offering a safe,
+              scalable, and efficient environment for training and testing.
+            </p>
+            <div class="intro-grid">
+              <a href="best-practices.html" class="source-card-link">
+                <div class="intro-card">
+                  <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                  <h4>Train & Test</h4>
+                  <p>
+                    Develop and validate complex behaviors without risking real
+                    hardware.
+                  </p>
+                </div>
+              </a>
+              <a href="evaluation.html" class="source-card-link">
+                <div class="intro-card">
+                  <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                  <h4>Benchmark</h4>
+                  <p>
+                    Compare algorithms in reproducible, controlled scenarios.
+                  </p>
+                </div>
+              </a>
+              <a href="best-practices.html" class="source-card-link">
+                <div class="intro-card">
+                  <div class="card-icon"><i class="fas fa-database"></i></div>
+                  <h4>Generate Data</h4>
+                  <p>
+                    Create vast datasets for learning at a fraction of the
+                    real-world cost.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <br />
+            <p>
+              However, the effectiveness of simulation is often limited by the
+              "reality gap"—the discrepancies between simulated and real-world
+              environments.
+            </p>
+          </div>
+
+          <div class="challenge-box">
+            <h3>The Reality Gap</h3>
+            <p>
+              Simulations are only approximations of the real world. The
+              "reality gap" is the collection of discrepancies—from physics to
+              perception—that can cause a policy to fail when transferred from
+              simulation to a real robot.
+            </p>
+          </div>
+
+          <div class="intro-section">
+            <div class="paper-section has-text-centered">
+              <img
+                src="gaps.png"
+                alt="Sources of the Reality Gap"
+                style="width: 80%; margin: auto; display: block"
+              />
+            </div>
+            <!-- Figure -->
+            <p>
+              This survey provides a comprehensive overview of the sim-to-real
+              landscape. We dissect the problem, identify the sources of the
+              reality gap, and provide metrics and solutions to understand and
+              alleviate these problems in practice. Our goal is to boost the
+              understanding of the problem by providing a guide for researchers
+              and practitioners.
+            </p>
+          </div>
+        </div>
+
+        <!-- Abstract -->
+        <div class="paper-section">
+          <h2 class="section-title">Abstract</h2>
+          <div class="abstract-content">
+            <p>
+              Machine learning has facilitated significant advancements across
+              various robotics domains, including navigation, locomotion, and
+              manipulation. Many such achievements have been driven by the
+              extensive use of simulation as a critical tool for training and
+              testing robotic systems prior to their deployment in real-world
+              environments. However, simulations consist of abstractions and
+              approximations that inevitably introduce discrepancies between
+              simulated and real environments, known as the reality gap. These
+              discrepancies significantly hinder the successful transfer of
+              systems from simulation to the real world. Closing this gap
+              remains one of the most pressing challenges in robotics. Recent
+              advances in sim-to-real transfer have demonstrated promising
+              results across various platforms, including locomotion,
+              navigation, and manipulation. By leveraging techniques such as
+              domain randomization, real-to-sim transfer, state and action
+              abstractions, and sim-real co-training, many works have overcome
+              the reality gap. However, challenges persist, and a deeper
+              understanding of the reality gap's root causes and solutions is
+              necessary. In this survey, we present a comprehensive overview of
+              the sim-to-real landscape, highlighting the causes, solutions, and
+              evaluation metrics for the reality gap and sim-to-real transfer.
+              Our goal is to provide a guide to identifying the challenges and
+              opportunities for future advancements in sim-to-real transfer for
+              robotic systems.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sources of Reality Gap -->
+        <div class="paper-section">
+          <h2 class="section-title">Sources of the Reality Gap</h2>
+          <div class="gap-sources">
+            <a href="domains.html" class="source-card-link">
+              <div class="source-card">
+                <div class="source-icon dynamics">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Dynamics</h3>
+                <p>
+                  Discrepancies in physics simulation including rigid body
+                  dynamics, friction, contact forces, and material properties.
+                </p>
+                <div class="source-examples">
+                  <span class="tag">Friction Models</span>
+                  <span class="tag">Contact Forces</span>
+                  <span class="tag">Deformation</span>
+                </div>
+              </div>
+            </a>
+            <a href="domains.html" class="source-card-link">
+              <div class="source-card">
+                <div class="source-icon perception">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <h3>Perception & Sensing</h3>
+                <p>
+                  Differences in sensor data between simulation and reality,
+                  affecting visual, tactile, and proprioceptive feedback.
+                </p>
+                <div class="source-examples">
+                  <span class="tag">Camera Noise</span>
+                  <span class="tag">LiDAR Artifacts</span>
+                  <span class="tag">Lighting</span>
+                </div>
+              </div>
+            </a>
+            <a href="domains.html" class="source-card-link">
+              <div class="source-card">
+                <div class="source-icon actuation">
+                  <i class="fas fa-sliders-h"></i>
+                </div>
+                <h3>Actuation & Control</h3>
+                <p>
+                  Variations in motor behavior, joint dynamics, and control system
+                  responses between simulated and real hardware.
+                </p>
+                <div class="source-examples">
+                  <span class="tag">Motor Dynamics</span>
+                  <span class="tag">Backlash</span>
+                  <span class="tag">Delays</span>
+                </div>
+              </div>
+            </a>
+            <a href="domains.html" class="source-card-link">
+              <div class="source-card">
+                <div class="source-icon system">
+                  <i class="fas fa-network-wired"></i>
+                </div>
+                <h3>System Design</h3>
+                <p>
+                  System-level differences including communication delays, safety
+                  mechanisms, and software stack inconsistencies.
+                </p>
+                <div class="source-examples">
+                  <span class="tag">Latency</span>
+                  <span class="tag">Safety Limits</span>
+                  <span class="tag">Software Stack</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Solution Taxonomy -->
+        <div class="paper-section">
+          <h2 class="section-title">Solution Taxonomy</h2>
+          <div class="solution-taxonomy">
+            <a href="best-practices.html" class="source-card-link">
+              <div class="approach-section">
+                <h3 class="approach-title">Reducing the Gap</h3>
+                <p class="approach-desc">
+                  Making simulation more realistic through improved fidelity and
+                  smart design choices
+                </p>
+                <div class="method-grid">
+                  <div class="method-item">
+                    <h4>System Identification</h4>
+                    <p>Parameter estimation and calibration techniques</p>
+                  </div>
+                  <div class="method-item">
+                    <h4>Physics Learning</h4>
+                    <p>Learning residual dynamics and corrections</p>
+                  </div>
+                  <div class="method-item">
+                    <h4>Hardware Design</h4>
+                    <p>Co-design of hardware and simulation</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="best-practices.html" class="source-card-link">
+              <div class="approach-section">
+                <h3 class="approach-title">Overcoming the Gap</h3>
+                <p class="approach-desc">
+                  Making policies robust to reality gap through diverse training
+                </p>
+                <div class="method-grid">
+                  <div class="method-item">
+                    <h4>Domain Randomization</h4>
+                    <p>Training across diverse simulated environments</p>
+                  </div>
+                  <div class="method-item">
+                    <h4>Data-Driven Transfer</h4>
+                    <p>Incorporating real-world data into training</p>
+                  </div>
+                  <div class="method-item">
+                    <h4>Adaptive Methods</h4>
+                    <p>Online adaptation and meta-learning</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- BibTeX -->
+        <div class="paper-section" id="bibtex">
+          <h2 class="section-title">Citation</h2>
+          <div class="bibtex-container">
+            <pre class="bibtex-code">
+@article{aljalbout2025reality,
+  title={Reality Gap in Robotics: Challenges, Solutions, and Best Practices},
+  author={Aljalbout, Elie and Xing, Jiaxu and Romero, Angel and Akinola, Iretiayo and Garrett, Caelan and Heiden, Eric and Gupta, Abhishek and Hermans, Tucker and Narang, Yash and Fox, Dieter and Ramos, Fabio},
+  journal={arXiv preprint},
+  year={2025},
+  publisher={arXiv}
+}</pre
+            >
+            <button class="copy-btn" onclick="copyBibtex()">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="">Full Paper (Comming Soon!)</a></li>
+              <li><a href="#bibtex">Citation</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <p>
+              For questions about this survey, please contact the corresponding
+              authors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function copyBibtex() {
+        const bibtexText = document.querySelector(".bibtex-code").textContent;
+        navigator.clipboard.writeText(bibtexText).then(() => {
+          const btn = document.querySelector(".copy-btn");
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+          }, 2000);
+        });
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0,
+        );
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach((el) => {
+            el.addEventListener("click", () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              el.classList.toggle("is-active");
+              $target.classList.toggle("is-active");
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

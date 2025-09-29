@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Problems - Reality Gap in Robotics</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <strong>Robotics Reality Gap</strong>
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenu"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item" href="domains.html">Sources of Gaps</a>
+            <a class="navbar-item" href="evaluation.html">Evaluation Metrics</a>
+            <a class="navbar-item" href="best-practices.html">Best Practices</a>
+            <a class="navbar-item active" href="open-problems.html"
+              >Open Problems</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-light">
+      <div class="hero-body">
+        <div class="container">
+          <h1
+            class="title is-1"
+            style="
+              font-family: &quot;Crimson Text&quot;, serif;
+              font-size: 2.5rem;
+            "
+          >
+            Open Problems
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="page-layout">
+          <aside class="sidebar">
+            <div class="sidebar-widget">
+              <h3>On This Page</h3>
+              <ul>
+                <li><a href="#open-problems">Open Problems</a></li>
+              </ul>
+            </div>
+          </aside>
+          <div class="main-content">
+            <div class="paper-section" id="open-problems">
+              <h2 class="section-title">Discussion and Open Problems</h2>
+              <div class="content-grid">
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-robot card-icon"></i>
+                    <h3>Wrong Models, Better Controllers</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      It is more important in practice to reduce the sim-to-real
+                      performance gap than to reduce the reality gap. This
+                      motivates the question of whether accurate physics
+                      modeling is needed to perform reliable model-based
+                      control. An open question remains as to how a robot can
+                      most efficiently use a simulator with incorrect
+                      parametrization to learn either a policy or stochastic
+                      world model for use in generating robust, real-world
+                      performance.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-cogs card-icon"></i>
+                    <h3>Differentiable Simulators</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Differentiable simulators offer the computation of
+                      gradients of quantities involved in the simulation which
+                      allows them to be integrated in gradient-based
+                      optimization workflows. An open question remains as to how
+                      to best leverage differentiable simulation and augment it
+                      with learning-based dynamics model.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-video card-icon"></i>
+                    <h3>Video and World Models</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Video models are primarily designed to process, generate,
+                      or predict sequences of visual frames. World models pursue
+                      a broader goal: learning internal representations of an
+                      environment that enable simulation and prediction of
+                      future states. In future iterations, the paradigms of
+                      world modeling and simulation may not be so distinct, with
+                      simulators naturally providing data to bootstrap world
+                      models for deployment in reality.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-chart-pie card-icon"></i>
+                    <h3>Simulation-Based Inference</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Simulation-based inference is a statistical technique to
+                      approximate the posterior distribution of simulation
+                      parameters. An interesting opportunity for future research
+                      is to use other modalities, not directly state
+                      observations, to estimate simulation parameters. For
+                      example, we could use videos from both real and simulation
+                      as the inputs to the neural posterior estimator
+                      significantly simplifying the experimental setup.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Domain Resources</h4>
+            <ul>
+              <li><a href="evaluation.html">Evaluation Metrics</a></li>
+              <li><a href="best-practices.html">Best Practices</a></li>
+              <li><a href="open-problems.html">Open Problems</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0,
+        );
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach((el) => {
+            el.addEventListener("click", () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              el.classList.toggle("is-active");
+              $target.classList.toggle("is-active");
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

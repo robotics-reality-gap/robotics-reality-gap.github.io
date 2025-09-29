@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Insights - Reality Gap in Robotics</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <strong>Sim2Real Survey</strong>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="index.html">Home</a>
+                    <a class="navbar-item active" href="domains.html">Domain Insights</a>
+                    <a class="navbar-item" href="evaluation.html">Evaluation Metrics</a>
+                    <a class="navbar-item" href="best-practices.html">Best Practices</a>
+                    <a class="navbar-item" href="case-studies.html">Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-light">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1">Domain-Specific Insights</h1>
+                <h2 class="subtitle">Reality Gap Analysis Across Robotics Domains</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <!-- Domain Overview -->
+            <div class="paper-section">
+                <h2 class="section-title">Domain Analysis Overview</h2>
+                <div class="domain-overview">
+                    <p class="overview-text">
+                        Our comprehensive analysis across 15 robotics domains reveals distinct patterns in reality gap manifestation and transfer success rates. Each domain presents unique challenges, from the complex contact dynamics in manipulation to the dynamic stability requirements in locomotion.
+                    </p>
+                    <div class="domain-stats">
+                        <div class="domain-stat">
+                            <h3>Manipulation</h3>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="stat-label">85% Gap Severity</span>
+                        </div>
+                        <div class="domain-stat">
+                            <h3>Locomotion</h3>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 78%"></div>
+                            </div>
+                            <span class="stat-label">78% Gap Severity</span>
+                        </div>
+                        <div class="domain-stat">
+                            <h3>Navigation</h3>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 45%"></div>
+                            </div>
+                            <span class="stat-label">45% Gap Severity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain Deep Dives -->
+            <div class="paper-section">
+                <h2 class="section-title">Domain Deep Dives</h2>
+                <div class="domains-grid">
+                    <div class="domain-card">
+                        <div class="domain-header">
+                            <div class="domain-icon manipulation">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <h3>Manipulation</h3>
+                            <span class="domain-complexity high">High Complexity</span>
+                        </div>
+                        <div class="domain-content">
+                            <div class="challenge-list">
+                                <h4>Primary Challenges</h4>
+                                <ul>
+                                    <li><strong>Contact Dynamics:</strong> Complex friction models and surface interactions</li>
+                                    <li><strong>Deformation:</strong> Elastic and plastic object deformation</li>
+                                    <li><strong>Sensor Noise:</strong> Tactile feedback and force sensing variations</li>
+                                    <li><strong>Precision Requirements:</strong> Sub-millimeter accuracy demands</li>
+                                </ul>
+                            </div>
+                            <div class="solution-approaches">
+                                <h4>Effective Approaches</h4>
+                                <div class="approach-tags">
+                                    <span class="tag success">Tactile Randomization</span>
+                                    <span class="tag success">Force-Guided Learning</span>
+                                    <span class="tag success">Residual Physics</span>
+                                </div>
+                            </div>
+                            <div class="domain-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">73%</span>
+                                    <span class="metric-label">Success Rate</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">120</span>
+                                    <span class="metric-label">Papers Analyzed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="domain-card">
+                        <div class="domain-header">
+                            <div class="domain-icon locomotion">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <h3>Locomotion</h3>
+                            <span class="domain-complexity high">High Complexity</span>
+                        </div>
+                        <div class="domain-content">
+                            <div class="challenge-list">
+                                <h4>Primary Challenges</h4>
+                                <ul>
+                                    <li><strong>Ground Contact:</strong> Terrain friction and compliance variations</li>
+                                    <li><strong>Dynamics:</strong> Inertial properties and joint compliance</li>
+                                    <li><strong>Stability:</strong> Balance and recovery from disturbances</li>
+                                    <li><strong>Actuator Limits:</strong> Torque and velocity constraints</li>
+                                </ul>
+                            </div>
+                            <div class="solution-approaches">
+                                <h4>Effective Approaches</h4>
+                                <div class="approach-tags">
+                                    <span class="tag success">Terrain Randomization</span>
+                                    <span class="tag success">Adversarial Training</span>
+                                    <span class="tag success">Privileged Learning</span>
+                                </div>
+                            </div>
+                            <div class="domain-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">68%</span>
+                                    <span class="metric-label">Success Rate</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">95</span>
+                                    <span class="metric-label">Papers Analyzed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="domain-card">
+                        <div class="domain-header">
+                            <div class="domain-icon navigation">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h3>Navigation</h3>
+                            <span class="domain-complexity medium">Medium Complexity</span>
+                        </div>
+                        <div class="domain-content">
+                            <div class="challenge-list">
+                                <h4>Primary Challenges</h4>
+                                <ul>
+                                    <li><strong>Sensor Modeling:</strong> LiDAR and camera calibration differences</li>
+                                    <li><strong>Dynamic Obstacles:</strong> Moving objects and pedestrians</li>
+                                    <li><strong>Localization:</strong> GPS and odometry drift</li>
+                                    <li><strong>Weather Conditions:</strong> Lighting and precipitation effects</li>
+                                </ul>
+                            </div>
+                            <div class="solution-approaches">
+                                <h4>Effective Approaches</h4>
+                                <div class="approach-tags">
+                                    <span class="tag success">Sensor Noise Injection</span>
+                                    <span class="tag success">Scenario Diversity</span>
+                                    <span class="tag success">Multi-Modal Fusion</span>
+                                </div>
+                            </div>
+                            <div class="domain-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">84%</span>
+                                    <span class="metric-label">Success Rate</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">75</span>
+                                    <span class="metric-label">Papers Analyzed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="domain-card">
+                        <div class="domain-header">
+                            <div class="domain-icon aerial">
+                                <i class="fas fa-helicopter"></i>
+                            </div>
+                            <h3>Aerial Robotics</h3>
+                            <span class="domain-complexity medium">Medium Complexity</span>
+                        </div>
+                        <div class="domain-content">
+                            <div class="challenge-list">
+                                <h4>Primary Challenges</h4>
+                                <ul>
+                                    <li><strong>Aerodynamics:</strong> Wind disturbances and turbulence</li>
+                                    <li><strong>Sensor Dynamics:</strong> IMU noise and bias drift</li>
+                                    <li><strong>Control Delays:</strong> Communication latency effects</li>
+                                    <li><strong>Battery Constraints:</strong> Power consumption modeling</li>
+                                </ul>
+                            </div>
+                            <div class="solution-approaches">
+                                <h4>Effective Approaches</h4>
+                                <div class="approach-tags">
+                                    <span class="tag success">Wind Disturbance Modeling</span>
+                                    <span class="tag success">Delay Compensation</span>
+                                    <span class="tag success">Robust Control</span>
+                                </div>
+                            </div>
+                            <div class="domain-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">76%</span>
+                                    <span class="metric-label">Success Rate</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">48</span>
+                                    <span class="metric-label">Papers Analyzed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cross-Domain Insights -->
+            <div class="paper-section">
+                <h2 class="section-title">Cross-Domain Insights</h2>
+                <div class="cross-domain-analysis">
+                    <div class="insight-item">
+                        <div class="insight-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="insight-content">
+                            <h3>Success Rate Patterns</h3>
+                            <p>Domains with higher environmental interaction complexity (manipulation, locomotion) show lower transfer success rates but benefit more from physics-based approaches.</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="insight-content">
+                            <h3>Common Solution Themes</h3>
+                            <p>Randomization techniques are universally effective, but domain-specific adaptations (tactile for manipulation, terrain for locomotion) show 15-25% improvement.</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="insight-content">
+                            <h3>Sim-to-Real vs Real-to-Sim</h3>
+                            <p>Navigation and aerial domains show promise for real-to-sim approaches, while manipulation heavily favors sim-to-real with extensive domain randomization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain Selection Guide -->
+            <div class="paper-section">
+                <h2 class="section-title">Domain Selection Guide</h2>
+                <div class="selection-guide">
+                    <h3>Choosing Your Approach Based on Domain</h3>
+                    <div class="guide-matrix">
+                        <div class="guide-row">
+                            <div class="guide-cell header">Domain</div>
+                            <div class="guide-cell header">Recommended Approach</div>
+                            <div class="guide-cell header">Key Focus Areas</div>
+                            <div class="guide-cell header">Expected Timeline</div>
+                        </div>
+                        <div class="guide-row">
+                            <div class="guide-cell">Manipulation</div>
+                            <div class="guide-cell">Physics-Enhanced + Tactile DR</div>
+                            <div class="guide-cell">Contact dynamics, sensor noise</div>
+                            <div class="guide-cell">12-18 months</div>
+                        </div>
+                        <div class="guide-row">
+                            <div class="guide-cell">Locomotion</div>
+                            <div class="guide-cell">Terrain DR + Adversarial</div>
+                            <div class="guide-cell">Ground contact, stability</div>
+                            <div class="guide-cell">8-12 months</div>
+                        </div>
+                        <div class="guide-row">
+                            <div class="guide-cell">Navigation</div>
+                            <div class="guide-cell">Sensor DR + Scenario Diversity</div>
+                            <div class="guide-cell">Environmental variation</div>
+                            <div class="guide-cell">6-9 months</div>
+                        </div>
+                        <div class="guide-row">
+                            <div class="guide-cell">Aerial</div>
+                            <div class="guide-cell">Disturbance Modeling + Robust Control</div>
+                            <div class="guide-cell">Wind effects, delays</div>
+                            <div class="guide-cell">8-10 months</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Domain Resources</h4>
+                    <ul>
+                        <li><a href="evaluation.html">Evaluation Metrics</a></li>
+                        <li><a href="best-practices.html">Best Practices</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="robot_sim_to_real.pdf">Full Paper</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

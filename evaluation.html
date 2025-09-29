@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evaluation Metrics - Reality Gap in Robotics</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <strong>Robotics Reality Gap</strong>
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenu"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item" href="domains.html">Sources of Gaps</a>
+            <a class="navbar-item active" href="evaluation.html"
+              >Evaluation Metrics</a
+            >
+            <a class="navbar-item" href="best-practices.html">Best Practices</a>
+            <a class="navbar-item" href="open-problems.html">Open Problems</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-light">
+      <div class="hero-body">
+        <div class="container">
+          <h1
+            class="title is-1"
+            style="
+              font-family: &quot;Crimson Text&quot;, serif;
+              font-size: 2.5rem;
+            "
+          >
+            Evaluation Metrics
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="page-layout">
+          <aside class="sidebar">
+            <div class="sidebar-widget">
+              <h3>On This Page</h3>
+              <ul>
+                <li><a href="#assessing-gap">Assessing the Reality Gap</a></li>
+                <li>
+                  <a href="#assessing-transfer"
+                    >Assessing Sim-to-Real Transfer</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </aside>
+          <div class="main-content">
+            <div class="paper-section" id="assessing-gap">
+              <h2 class="section-title">Assessing the Reality Gap</h2>
+              <div class="content-grid">
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-chart-line card-icon"></i>
+                    <h3>Sim-to-real Correlation Coefficient</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      A key question in sim-to-real transfer is whether
+                      performance improvement observed in simulation reliably
+                      leads to better performance in the real world. The
+                      Sim-to-real Correlation Coefficient (SRCC) addresses this
+                      by measuring the Pearson correlation coefficient between
+                      the performance metrics of agents in simulation and the
+                      real world. A high SRCC indicates that simulation is a
+                      good predictor of real-world performance.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-history card-icon"></i>
+                    <h3>Offline Replay Error</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      When direct real-world policy deployment is not feasible,
+                      offline replay error provides a practical alternative. It
+                      compares state trajectories between a real-world
+                      trajectory and the equivalent simulation trajectory when
+                      replaying the real-world actions in an open-loop fashion.
+                      This metric is simple, low-cost, and provides a quick
+                      diagnostic of how well the simulation represents the
+                      target real-world environment.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-image card-icon"></i>
+                    <h3>Visual Fidelity Analysis</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Assessing the perceptual domain gap between simulated and
+                      real-world environments is particularly relevant for
+                      visuomotor policies. Metrics like Inception Score (IS),
+                      Fréchet Inception Distance (FID), and Structural
+                      Similarity Index (SSIM) are used to quantify visual
+                      similarity at both the distribution and single-image
+                      levels.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="paper-section" id="assessing-transfer">
+              <h2 class="section-title">Assessing Sim-to-Real Transfer</h2>
+              <div class="content-grid">
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-check-circle card-icon"></i>
+                    <h3>Success Rate</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Success rate measures the proportion of trials in which a
+                      policy successfully completes the intended task. It is a
+                      simple and reliable indicator of sim-to-real transfer
+                      effectiveness, but it is often a binary metric that
+                      doesn't reveal the nuances of failure.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-star card-icon"></i>
+                    <h3>Cumulative Reward</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      For policies learned using reinforcement learning, the
+                      cumulative reward measures how well a policy achieves
+                      long-term objectives. It offers a more fine-grained view
+                      of performance than success rate, but its interpretability
+                      depends on consistent reward functions across simulation
+                      and the real world.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-tasks card-icon"></i>
+                    <h3>Task-specific Metrics</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Most successful sim-to-real studies evaluate performance
+                      using task-specific criteria tailored to the target
+                      domain, such as path efficiency in navigation or
+                      object-distance-to-goal in manipulation. These metrics
+                      offer fine-grained insights but can hinder fair comparison
+                      between methods.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Domain Resources</h4>
+            <ul>
+              <li><a href="evaluation.html">Evaluation Metrics</a></li>
+              <li><a href="best-practices.html">Best Practices</a></li>
+              <li><a href="open-problems.html">Open Problems</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0,
+        );
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach((el) => {
+            el.addEventListener("click", () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              el.classList.toggle("is-active");
+              $target.classList.toggle("is-active");
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Practices - Reality Gap in Robotics</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <strong>Robotics Reality Gap</strong>
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenu"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item" href="domains.html">Sources of Gaps</a>
+            <a class="navbar-item" href="evaluation.html">Evaluation Metrics</a>
+            <a class="navbar-item active" href="best-practices.html"
+              >Best Practices</a
+            >
+            <a class="navbar-item" href="open-problems.html">Open Problems</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-light">
+      <div class="hero-body">
+        <div class="container">
+          <h1
+            class="title is-1"
+            style="
+              font-family: &quot;Crimson Text&quot;, serif;
+              font-size: 2.5rem;
+            "
+          >
+            Best Practices
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="page-layout">
+          <aside class="sidebar">
+            <div class="sidebar-widget">
+              <h3>On This Page</h3>
+              <ul>
+                <li><a href="#reducing-gap">Reducing the Gap</a></li>
+                <li><a href="#overcoming-gap">Overcoming the Gap</a></li>
+              </ul>
+            </div>
+          </aside>
+          <div class="main-content">
+            <div class="paper-section" id="reducing-gap">
+              <h2 class="section-title">Reducing the Gap</h2>
+              <div class="content-grid">
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-cogs card-icon"></i>
+                    <h3>Improving Simulation</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      It is possible to improve different aspects of the
+                      simulated environment, such as its physical fidelity,
+                      sensor models, and many other components that influence
+                      the reality gap.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-cubes card-icon"></i>
+                    <h3>Choice of Modalities and Representations</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      For most robotic tasks, it is possible to define different
+                      observation and action spaces. This choice of interface
+                      defines the potential behaviors of the resulting system
+                      and can have strong implications on the reality gap.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-drafting-compass card-icon"></i>
+                    <h3>Design Choices</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      The system design and implementations strongly influence
+                      the transferability of any behavior from simulation to the
+                      real world. It is important to consider the reality gap
+                      when designing the system, including its hardware,
+                      controller implementations, constraints, and software
+                      stack.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="paper-section" id="overcoming-gap">
+              <h2 class="section-title">Overcoming the Gap</h2>
+              <div class="content-grid">
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-random card-icon"></i>
+                    <h3>Domain Generalization and Adaptation</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      One of the most common approaches to overcome the reality
+                      gap is to expose the policy to a large variation of the
+                      system and dynamics parameters during training. As a
+                      result, the policy should be robust to different
+                      instantiations of these parameters, including the ones
+                      representing the real world.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-database card-icon"></i>
+                    <h3>Data Selection and Exploration</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Another important category of methods to overcome the
+                      reality gap is to carefully select and curate the training
+                      data and exploration strategies used in simulation. These
+                      methods focus on generating training data that most
+                      closely resemble the target real-world data or data from
+                      worst-case behaviors.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-puzzle-piece card-icon"></i>
+                    <h3>Policy Architecture and Regularization</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      In addition to the data a policy is exposed to at training
+                      time, the policy's architecture and constraints can play a
+                      crucial role in the transfer to the real world. This
+                      section describes different ways to structure the policy
+                      and regularize it in a way that helps sim-to-real
+                      transfer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Domain Resources</h4>
+            <ul>
+              <li><a href="evaluation.html">Evaluation Metrics</a></li>
+              <li><a href="best-practices.html">Best Practices</a></li>
+              <li><a href="open-problems.html">Open Problems</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0,
+        );
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach((el) => {
+            el.addEventListener("click", () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              el.classList.toggle("is-active");
+              $target.classList.toggle("is-active");
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

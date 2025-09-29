@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Source of Gaps - Reality Gap in Robotics</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <strong>Robotics Reality Gap</strong>
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarMenu"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item active" href="domains.html"
+              >Sources of Gaps</a
+            >
+            <a class="navbar-item" href="evaluation.html">Evaluation Metrics</a>
+            <a class="navbar-item" href="best-practices.html">Best Practices</a>
+            <a class="navbar-item" href="open-problems.html">Open Problems</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-light">
+      <div class="hero-body">
+        <div class="container">
+          <h1
+            class="title is-1"
+            style="
+              font-family: &quot;Crimson Text&quot;, serif;
+              font-size: 2.5rem;
+            "
+          >
+            Sources of the Reality Gap
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="page-layout">
+          <aside class="sidebar">
+            <div class="sidebar-widget">
+              <h3>On This Page</h3>
+              <ul>
+                <li><a href="#dynamics">Dynamics</a></li>
+                <li><a href="#perception">Perception & Sensing</a></li>
+                <li><a href="#actuation">Actuation & Control</a></li>
+                <li><a href="#system">System Design</a></li>
+              </ul>
+            </div>
+          </aside>
+          <div class="main-content">
+            <div class="paper-section" id="dynamics">
+              <h2 class="section-title">Dynamics</h2>
+              <div class="content-grid">
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-cube card-icon"></i>
+                    <h3>Modeling</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Simulators attempt to replicate real-world dynamics with
+                      models representing various aspects of physics, such as
+                      rigid-body dynamics, batteries, chaotic nature, and
+                      stochasticity. Each of these components can contribute to
+                      the reality gap.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-sliders-h card-icon"></i>
+                    <h3>Parameterization</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      A fundamental source of the dynamics gap arises from the
+                      incorrect parameterization of the physical model.
+                      Assigning accurate values to parameters like friction,
+                      mass, and inertia can be challenging.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-calculator card-icon"></i>
+                    <h3>Numerical Integrators</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      The choice of numerical integration methods (e.g., Euler,
+                      Runge-Kutta) and discretization can introduce
+                      discrepancies between the simulated and the real system,
+                      with a trade-off between fidelity and computation time.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-users card-icon"></i>
+                    <h3>Human-Robot Interaction</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Modeling complex, context-dependent, and often irrational
+                      human behaviors in simulation presents unique challenges
+                      that create substantial reality gaps.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-puzzle-piece card-icon"></i>
+                    <h3>Unmodeled Effects</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Physical phenomena like wear and tear, material fatigue,
+                      and thermal effects are often overlooked or simplified in
+                      simulation, causing significant sim-to-real differences.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-draw-polygon card-icon"></i>
+                    <h3>Asset Fidelity</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Simplified digital assets (meshes, SDFs) used for
+                      computational efficiency often lack the complexity and
+                      properties of real-world environments, leading to
+                      inaccurate geometric assumptions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="paper-section" id="perception">
+              <h2 class="section-title">Perception and Sensing</h2>
+              <div class="content-grid">
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-camera-retro card-icon"></i>
+                    <h3>Sensor Model</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Simulation models are designed to mimic the physical
+                      characteristics of real-world sensors, but often omit
+                      real-world artifacts such as lens flares, chromatic
+                      aberration, and sensor-specific interference.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-wave-square card-icon"></i>
+                    <h3>Sensor Noise</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Real-world sensor noise is often complex, non-Gaussian,
+                      and state-dependent, while many simulators use simple
+                      Gaussian noise models, leading to a significant gap.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-mountain card-icon"></i>
+                    <h3>Environment Representation</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Using low-resolution assets, simplified scene graphs, or
+                      generic materials can fail to capture fine-grained
+                      perceptual cues such as surface textures, reflectance, and
+                      subtle geometry.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-robot card-icon"></i>
+                    <h3>Robot Model</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Simulated robot models often simplify or omit important
+                      physical details like manufacturing tolerances, material
+                      wear, and mechanical backlash, which can cause
+                      self-collisions or unstable motions.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-compress-arrows-alt card-icon"></i>
+                    <h3>Collision Sensing</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Simulators use simplified geometric approximations for
+                      collision detection, which limits the accuracy of contact
+                      modeling, especially in tasks involving fine-grained
+                      manipulation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="paper-section" id="actuation">
+              <h2 class="section-title">Actuation and Control</h2>
+              <div class="content-grid">
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-cogs card-icon"></i>
+                    <h3>Actuator Models</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Real actuators behave as higher-order systems with
+                      non-linearities like dead-zones and backlash, while
+                      simulators often treat them as simple first-order systems.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-microchip card-icon"></i>
+                    <h3>Low-level Control</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Real robots have low-level control layers with hidden
+                      filters and safety logic that are often not modeled in
+                      simulation, creating a significant actuation gap.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-bolt card-icon"></i>
+                    <h3>Power Electronics</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Motor drivers and power electronics introduce latency,
+                      command quantization, and current/voltage caps that are
+                      typically absent in simulation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="paper-section" id="system">
+              <h2 class="section-title">System Design</h2>
+              <div class="content-grid">
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-network-wired card-icon"></i>
+                    <h3>Communication</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Real-world communication can have delays and packet loss,
+                      with fallback mechanisms that are almost never modeled in
+                      simulation.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-shield-alt card-icon"></i>
+                    <h3>Safety Mechanisms</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Real-world safety mechanisms like virtual walls are often
+                      not present in simulation, which can change the robot's
+                      behavior and widen the reality gap.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-tasks card-icon"></i>
+                    <h3>POMDP Formulation</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Simulated POMDPs may use privileged information for
+                      rewards and termination, or infeasible resets, creating
+                      state-action distributions unlike those in the real world.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-card">
+                  <div class="card-header">
+                    <i class="fas fa-code card-icon"></i>
+                    <h3>Implementation Details</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Discrepancies in the granularity of discretization, or
+                      different frequencies for control loops between simulation
+                      and the real world can significantly impact the reality
+                      gap.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Domain Resources</h4>
+            <ul>
+              <li><a href="evaluation.html">Evaluation Metrics</a></li>
+              <li><a href="best-practices.html">Best Practices</a></li>
+              <li><a href="open-problems.html">Open Problems</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0,
+        );
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach((el) => {
+            el.addEventListener("click", () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              el.classList.toggle("is-active");
+              $target.classList.toggle("is-active");
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
